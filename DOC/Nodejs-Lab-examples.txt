@@ -1,0 +1,169 @@
+1)-----------------Core Modules :OS Module---------------------
+
+|--------------use_os_module.js---------------------|
+
+var os=require('os')
+
+console.log(os.type()) 
+console.log(os.arch())   
+console.log(os.hostname()) 
+console.log(os.platform())
+console.log(os.release())
+console.log(os.version())
+console.log(os.userInfo()) 
+console.log(os.totalmem())
+console.log(os.freemem())
+|----------------------end----------------------|
+
+
+2)--------------Core Modules : File System-FS-Module------------------
+|----- sample.txt---------------------------|
+---
+welcome to node.js programming
+node.js file system module
+----
+|-------------use_fs_1.js------------------|
+var fs=require("fs");
+
+fs.readFile("./sample.txt","utf-8",function(err,data)
+{
+if(err)
+{
+console.error(err);
+}
+console.log(data);
+});
+|---------------------end-----------------|
+
+
+
+|-------------use_fs_2.js------------------|
+var fs = require('fs');
+fs.writeFile("file1.txt","This file is created by writefile() method",
+(err)=>{
+if(err){
+console.log(err)
+}
+console.log('File created.....')
+}
+)
+|---------------------end-----------------|
+
+
+
+|-------------use_fs_3.js------------------|
+var fs = require('fs');
+fs.appendFile("file1.txt","This is updated content by  appendFile() method",
+(err)=>{
+if(err){
+console.log(err)
+}
+console.log('File updated.....')
+}
+)
+|---------------------end-----------------|
+
+
+
+Rename "newfile1.txt" to "renamedfile.txt":
+|-------------use_fs_4.js------------------|
+var fs = require('fs');
+
+fs.rename('newfile1.txt', 'renamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File Renamed!');
+});
+|---------------------end-----------------|
+
+
+
+|-------------use_fs_5.js------------------|
+var fs = require('fs');
+
+fs.unlink('renamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+
+|---------------------end-----------------|
+
+
+
+
+
+
+
+
+3)---------------------- Core Modules :Node.js Path Module--------------------
+
+
+|---------------------use_path_1.js-----------------|
+var pth=require("path");
+const p="/mern/fullstack/file.txt";
+console.log(pth.basename(p));
+console.log(pth.dirname(p));
+console.log(pth.extname(p));
+|---------------------end-----------------|
+
+4)------------------Local Modules--------------------------
+|---------------------local_module1.js-----------------|
+
+function hai(){
+    console.log("hello...how r u......");
+}
+
+module.exports=hai;
+|----------------------end----------------------|
+
+|---------------------use_lm1.js-----------------|
+
+var abc=require('./local_module1');
+
+abc();
+|----------------------end----------------------|
+
+|---------------------local_module3.js -----------------|
+
+let person={
+    name:"sachin",
+    location:"mumbai",
+    greet:function(){
+        console.log("I am"+this.name+" from "+this.location);
+          }
+};
+
+module.exports=person;
+|----------------------end----------------------|
+
+|---------------------use_lm3.js -----------------|
+let p=require("./local_module3");
+
+console.log(p.name);
+console.log(p.location);
+p.greet()
+|----------------------end----------------------|
+5)----------------global_objects-------------------------------------
+------------------------------------use_global_objects.js----------------------------
+console.log("node.js global objects");
+console.log(__filename);
+console.log(__dirname);
+
+--------------------------
+ setInterval(function () {
+     console.log("Nodejs programming");
+  }, 1000);
+-------------------
+setTimeout(function () {
+  console.log("setTimeout obj");
+}, 1000);
+---------------------------
+var si=setInterval(function () {
+  console.log("Nodejs programming");
+}, 1000);
+
+ setTimeout(() => {
+  clearInterval(si);
+}, 4000);
+
+
+
