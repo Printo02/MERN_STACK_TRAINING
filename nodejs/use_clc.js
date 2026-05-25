@@ -1,0 +1,8 @@
+var clc = require("cli-color");
+
+
+console.log(clc.red("Text in red"));
+console.log(clc.red.bgWhite.underline("Underlined red text on white background."));
+
+console.log(clc.red("red") + " plain " + clc.blue("blue"));
+console.log(clc.red("red " + clc.blue("blue") + " red"));
