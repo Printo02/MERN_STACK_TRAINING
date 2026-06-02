@@ -1,0 +1,9 @@
+// to create package.json file
+    npm init -y  # with default dependencies
+
+
+// to install express
+  npm install express
+
+
+// run 

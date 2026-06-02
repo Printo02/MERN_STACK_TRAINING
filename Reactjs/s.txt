@@ -1,0 +1,10 @@
+npm create 
+
+
+
+// run  react project
+npm run dev
+
+
+
+// rafce - to get templates like html boilerplates
