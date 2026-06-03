@@ -29,7 +29,7 @@ function App() {
     <>
     <First/>
     <Second/>  
-    <Laptop brand="hp"/>  
+    <Laptop brand="Lenovo"/>  
     </>
 
 
